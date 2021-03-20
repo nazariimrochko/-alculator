@@ -1,2 +1,2 @@
 # Calculator
-My mini-task are in JavaScript
+Working with a simple calculator similar to the Windows calculator writing logic and adding css styles
