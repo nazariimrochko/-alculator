@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="UI version" content="<%= htmlWebpackPlugin.options.version %>">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link href="/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <% for (key in htmlWebpackPlugin.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet" />
+    <% } %>
+    <title>Calculator</title>
+</head>
+<body>
+
+<div class="calc_wrap">
+    <div class="calc-input">
+        <input class="calc-input_item" id="input" type="text" placeholder="0,00" />
+
+    </div>
+    <div class="calc-btn ">
+        <button class="calc-btn_item"  id="zero">0</button>
+        <button class="calc-btn_item"  id="one">1</button>
+        <button class="calc-btn_item"  id="two">2</button>
+        <button class="calc-btn_item"  id="three">3</button>
+        <button class="calc-btn_item"  id="four">4</button>
+        <button class="calc-btn_item"  id="five">5</button>
+        <button class="calc-btn_item"  id="six">6</button>
+        <button class="calc-btn_item"  id="seven">7</button>
+        <button class="calc-btn_item"  id="eight">8</button>
+        <button class="calc-btn_item"  id="nine">9</button>
+
+    </div>
+
+    <div class="calc-wrap3">
+        <button class="calc-btn_item"  id = "plus"> + </button>
+        <button class="calc-btn_item"  id = "minus"> - </button>
+        <button class="calc-btn_item"  id = "multiply"> * </button>
+        <button class="calc-btn_item"  id = "divide"> / </button>
+        <button class="calc-btn_item"  id = "dot"> . </button>
+    </div>
+    <div class="calc-wrap2">
+        <button class="calc-wrap2_btn2"  id = "equally"> = </button>
+        <button class="calc-wrap2_btn2"  id = "clear"> Clear </button>
+        <button class="calc-wrap2_btn2"  id = "deleteEl"> deleteEl </button>
+
+    </div>
+</div>
+
+<% for (key in htmlWebpackPlugin.files.js) { %>
+    <script src="<%= htmlWebpackPlugin.files.js[key] %>"></script>
+<% } %>
+
+<style>
+
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family:Poppins,sans-serif;
+        background-image: url(https://i.pinimg.com/originals/f2/bc/88/f2bc8848b997efa57207f6f02b3eeb1f.jpg);
+    }
+
+    .calc_wrap {
+        display: flex;
+        flex-direction: column;
+        box-shadow: inset 0px 0px 7px 3px #67CAF7;
+        border-style: solid;
+        border-width: 3px;
+        border-color:  #000000;
+        border-radius: 5px;
+        padding: 15px;
+        max-width: 250px;
+        height: 300px;
+        font-family:Poppins,sans-serif;
+        background: rgb(103,203,247);
+        background: radial-gradient(circle, rgba(103,203,247,0.6) 0%, rgba(32,16,41,0.8799894957983193) 100%);
+
+
+    }
+
+
+    .calc-input {
+        display: flex;
+        justify-content: center;
+        color: #ffffff;
+        width: 250px;
+        height: 50px;
+    }
+
+    .calc-input_item {
+        background-color: rgba(127,196,228,0.2);
+        color: #ffffff;
+        outline: none;
+        border-style: solid;
+        border-width: 2px;
+        border-color:  #000000;
+        font-size: 20px;
+        border-radius: 3px;
+        margin-bottom: 10px;
+        width: 225px;
+        height: 35px;
+        font-family:Poppins,sans-serif;
+        letter-spacing: 2px;
+    }
+
+    .calc-btn{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+    }
+
+    .calc-btn_item {
+        background: #413B52;
+        border-radius:3px;
+        font-size:20px;
+        font-style: inherit;
+        margin: 4px;
+        width: 42px;
+        height: 42px;
+        border:none;
+        color: #ffffff;
+        outline: none;
+        transition: .2s ease-out;
+        box-shadow: inset 0px 0px 3px 2px transparent;
+    }
+    .calc-btn_item:active{
+        box-shadow: inset 0px 0px 5px 3px #1BD8F3;
+    }
+    .calc-wrap2 {
+        margin-top: 15px;
+    }
+    .calc-wrap3{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .calc-wrap2_btn2 {
+        background-color:#7ACDF3;
+        /*box-shadow: 0px 0px  0px 1px #4B4C4E;*/
+        border-radius: 3px;
+        font-size: 17px;
+        margin: 2px;
+        width: 75px;
+        height: 40px;
+        border: none;
+        color: #263238;
+        outline: none;
+        transition: .3s ease-out;
+        box-shadow: inset 0px 0px 3px 2px transparent;
+
+    }
+    .calc-wrap2_btn2:active{
+        box-shadow: inset 0px 0px 5px 3px #403D55;
+    }
+
+</style>
+</body>
+</html>
